@@ -1,38 +1,352 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ============ GENERAL STYLES ============ */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --color-bg: #ffffff;
+  --color-bg-variant: #495e57;
+  --color-primary: #f4ce14;
+  /* Blue */
+  --color-primary-variant: #0056b3;
+  /* Darker Blue */
+  --color-accent: #ff4500;
+  /* Orange-Red */
+  --color-accent-variant: #cc3700;
+  /* Darker Orange-Red */
+  --color-light: #edefee;
+  /* Black */
+  --color-black: black;
+  /* Light Gray */
+
+  --transition: all 200ms ease;
+
+  --container-width-lg: 100%;
+  --container-width-md: 86%;
+  --container-width-sm: 90%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-white);
+  line-height: 1.7;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a {
+  color: black;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: grey;
+}
+
+
+.container {
+  width: var(--container-width-lg);
+  margin: auto;
+}
+
+.btn {
+  background-color: var(--color-primary);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  font-size: 2rem;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* ============ APP ============ */
+
+.app__container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* ============ NAV ============ */
+
+.nav__container {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__container > :nth-child(2) {
+  width: 80%;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 60px;
+  list-style: none;
+}
+
+.nav__links li {
+  margin-right: 20px;
+  font-size: 16px;
+  font-weight: bold;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Style the link on hover */
+.nav__links li:hover {
+  color: grey; /* Change color on hover */
+  cursor: pointer;
+  transition: color 0.2s ease; /* Smooth color transition */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style the active link (if needed) */
+.nav__links .active {
+  color: grey; /* Change color for the active link */
 }
+
+
+/* ============ FOOTER ============ */
+
+footer {
+  width: 100%;
+  height: 250px;
+  background-color: var(--color-bg-variant);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+footer img {
+  border-radius: 1rem;
+  max-width: 180px;
+}
+
+.footer__content {
+  margin-left: 10%;
+  flex: 1;
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+}
+
+.footer__links a {
+  color: white;
+}
+
+.footer__links a:hover {
+  color: grey; /* Change color on hover */
+  cursor: pointer;
+  transition: color 0.2s ease; /* Smooth color transition */
+}
+
+.footer__items {
+  max-width: 200px;
+}
+
+
+
+/* ============ HOME PAGE ============ */
+
+main {
+  width: 100%;
+}
+
+#hero {
+  background-color: var(--color-bg-variant);
+  color: white;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: top;
+  gap: 70px;
+  padding-left: 6rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+#hero h1 {
+  font-size: 2rem;
+  margin-bottom: -0.5rem;
+}
+
+#hero p {
+  margin-bottom: 2rem;
+}
+
+#hero img {
+  max-width: 500px;
+  margin: auto;
+}
+
+#highlights {
+  background-color: var(--color-bg);
+  color: black;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  height: fit-content;
+}
+
+#highlights .card-menus {
+  display: flex;
+  gap: 60px;
+  margin-top: 2rem;
+}
+
+#highlights h1 {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+#highlights .btn {
+  float: right;
+  margin-top: 1rem;
+}
+
+.card-menus .card {
+  background-color: var(--color-light);
+}
+
+.card .card-content {
+  padding: 1rem;
+}
+
+.card-menus img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-btn {
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--color-primary);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.card-btn:hover {
+  background-color: var(--color-bg-variant);
+  color: white;
+  cursor: pointer;
+}
+
+.card-btn-icon {
+  margin-left: 0.5rem;
+}
+
+#testimonials {
+  background-color: var(--color-bg);
+  color: black;
+  height: 300px;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.testimonials-card__container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+#testimonials article {
+  background-color: var(--color-light);
+  width: 300px;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+#testimonials h1 {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonials-card {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.testimonials-card p {
+  margin-left: 1rem;
+}
+
+.testimonials-p {
+  margin-top: 0.5rem;
+}
+
+#about {
+  background-color: var(--color-primary);
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: top;
+  gap: 70px;
+  padding-left: 6rem;
+  padding-top: 1.5rem;
+  padding-bottom: 5rem;
+}
+
+#about h1 {
+  font-size: 2rem;
+  margin-bottom: -0.5rem;
+}
+
+#about p {
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+#about img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  margin: auto;
+  border-radius: 0.25rem;
+}
+
+#about .second_column {
+  position: relative;
+  text-align: center;
+}
+
+.about-img-1 {
+  position: relative;
+  z-index: 10;
+}
+
+.about-img-2 {
+  position: absolute;
+  top: 50px;
+}
+
+
+
+

@@ -1,14 +1,16 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 const Nav = () => {
     return (
-        <header>
-            <div className='logoImage'>
-                <img src="" alt="" />
-            </div>
+        <header className='nav__container'>
+            <Link to="/">
+                <div className='logoImage'>
+                    <img src="little-lemon-logo.png" width="150px" height="80px" alt="little-lemon-logo" />
+                </div>
+            </Link>
             <nav>
-                <ul>
+                <ul className='nav__links'>
                     <li>
                         <NavLink to="/">Home</NavLink>
                     </li>
