@@ -117,8 +117,62 @@ a:hover {
 
 /* Style the active link (if needed) */
 .nav__links .active {
-  color: grey; /* Change color for the active link */
+  color: grey; 
 }
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end; 
+  cursor: pointer;
+  padding: 10px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 3px 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Media query */
+@media screen and (max-width: 768px) {
+  .nav__links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    right: -60px;
+    width: 50%;
+    background-color: var(--color-primary);
+    z-index: 2;
+  }
+
+  .nav__container.open .nav__links {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+    align-self: flex-end;
+  }
+
+  .menu-icon.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-icon.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-icon.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
 
 
 /* ============ FOOTER ============ */
@@ -348,5 +402,80 @@ main {
 }
 
 
+/* ============ BOOKING PAGE ============ */
 
 
+.styled-form {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: grid;
+  width: 50%;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--color-bg);
+  color: var(--color-black);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="date"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--color-light);
+  border-radius: 5px;
+  outline: none;
+  transition: var(--transition);
+}
+
+/* Style submit button */
+input[type="submit"] {
+  background-color: var(--color-primary);
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+input[type="submit"]:hover {
+  background-color: var(--color-primary-variant);
+  color: white;
+}
+
+
+/* ============ CONFIRMED PAGE ============ */
+
+
+.confirmed-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--color-primary);
+}
+
+.confirmed-content {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-bg);
+}
+
+.confirmed-heading {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.confirmed-message {
+  font-size: 1.2rem;
+}

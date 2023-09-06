@@ -1,6 +1,7 @@
 import React from 'react'
 import { MdOutlineDeliveryDining } from "react-icons/md"
 import { MdStars } from "react-icons/md"
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
     return (
@@ -10,7 +11,7 @@ const HomePage = () => {
                     <h1>Little Lemon</h1>
                     <h3>Chicago</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque cum omnis labore corporis, totam facere sint eum aspernatur voluptate odio.</p>
-                    <button className='btn'>Reserve a table</button>
+                    <Link to="booking"><button className='btn'>Reserve a table</button></Link>
                 </div>
                 <div className="second_column">
                     <img src="/bacalhau-photo.jpeg" alt="bacalhau" />
